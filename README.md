@@ -14,3 +14,4 @@ How to Run
 Technologies
     •    Python
     •    Visual Studio Code
+  Feature update: grade validation
