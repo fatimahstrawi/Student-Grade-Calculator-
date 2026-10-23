@@ -16,3 +16,5 @@ Technologies
     •    Visual Studio Code
   Feature update: grade validation
   README update from feature branch
+  README update from main branch
+
