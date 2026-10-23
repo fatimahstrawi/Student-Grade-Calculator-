@@ -9,17 +9,27 @@ try:
         print("Error: Enter at least one subject.")
     else:
         total = 0
+        valid_grades = True
 
         for i in range(num_subjects):
-            grade = float(input(f"Enter grade for subject {i + 1}: "))
+            try:
+                grade = float(
+                    input(f"Enter grade for subject {i + 1}: ")
+                )
 
-            if grade < 0 or grade > 100:
-                print("Error: Grades must be between 0 and 100.")
+                if grade < 0 or grade > 100:
+                    print("Error: Grades must be between 0 and 100.")
+                    valid_grades = False
+                    break
+
+                total += grade
+
+            except ValueError:
+                print("Error: Please enter a valid number for the grade.")
+                valid_grades = False
                 break
 
-            total += grade
-
-        else:
+        if valid_grades:
             average = total / num_subjects
 
             if average >= 90:
@@ -39,5 +49,5 @@ try:
             print("Final Grade:", letter_grade)
 
 except ValueError:
-    print("Error: Please enter valid numbers.")
+    print("Error: Please enter a valid number of subjects.")
     
